@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — Warung Lalapan</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <header class="auth-header">Register</header>
+
+    <main class="auth-body">
+
+        <figure class="auth-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none"
+                stroke="#2456a4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <line x1="19" y1="8" x2="19" y2="14" />
+                <line x1="22" y1="11" x2="16" y2="11" />
+            </svg>
+        </figure>
+
+        <section class="auth-form">
+            <label class="input-group">
+                <input type="text" id="reg-name" placeholder="Nama Lengkap">
+                <span id="name-error" class="error-text"></span>
+                <span class="icon"><i data-lucide="user" width="18" height="18"></i></span>
+            </label>
+            <label class="input-group">
+                <input type="email" id="reg-email" placeholder="Alamat Email">
+                <span id="email-error" class="error-text"></span>
+                <span class="icon"><i data-lucide="mail" width="18" height="18"></i></span>
+            </label>
+            <label class="input-group">
+                <input type="password" id="reg-pass" placeholder="Password">
+                <span id="pass-error" class="error-text"></span>
+                <span class="icon toggle-pass" onclick="togglePass('reg-pass', this)">
+                    <i data-lucide="eye-off" width="18" height="18"></i>
+                </span>
+            </label>
+            <label class="input-group">
+                <input type="password" id="reg-confirm" placeholder="Confirm Password">
+                <span id="confirm-error" class="error-text"></span>
+                <span class="icon toggle-pass" onclick="togglePass('reg-confirm', this)">
+                    <i data-lucide="eye-off" width="18" height="18"></i>
+                </span>
+            </label>
+            <button class="btn-primary" onclick="register()">Daftar</button>
+            <p class="auth-link">
+                Sudah punya akun?
+                <a href="../login/login.html">Masuk di sini</a>
+            </p>
+        </section>
+
+    </main>
+
+    <script src="../shared/shared.js"></script>
+    <script src="register.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

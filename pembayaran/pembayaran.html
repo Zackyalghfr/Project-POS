@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran — Warung Lalapan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="../shared/shared.css">
+    <link rel="stylesheet" href="pembayaran.css">
+</head>
+<body>
+<div class="app-layout">
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
+                fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            Pembayaran
+        </div>
+        <address class="topbar-user">
+            <span id="user-name"></span>
+            <div class="user-avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </div>
+        </address>
+    </header>
+
+    <div class="app-body">
+
+        <!-- Sidebar Navigasi -->
+        <nav class="sidebar">
+            <a class="nav-item" href="../menu/menu.html">
+                <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                        <path d="M7 2v20"/>
+                        <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+                    </svg>
+                </span>
+                Menu Utama
+            </a>
+            <a class="nav-item" href="../pesanan/pesanan.html">
+                <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"/>
+                        <circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                    <span class="badge-count" id="cart-count">0</span>
+                </span>
+                Pesanan
+            </a>
+            <a class="nav-item active" href="pembayaran.html">
+                <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                </span>
+                Pembayaran
+            </a>
+            <a class="nav-item" href="../transaksi/transaksi.html">
+                <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                </span>
+                Transaksi
+            </a>
+        </nav>
+
+        <!-- Konten Utama -->
+        <main class="main-content">
+            <h1 class="section-title">Metode Pembayaran</h1>
+            <section class="payment-grid">
+
+                <article class="payment-card" id="pay-tunai" onclick="selectPayment('tunai')">
+                    <span class="pay-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24"
+                            fill="none" stroke="#2456a4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="6" width="20" height="12" rx="2"/>
+                            <circle cx="12" cy="12" r="2"/>
+                            <path d="M6 12h.01M18 12h.01"/>
+                        </svg>
+                    </span>
+                    <strong class="pay-label">Tunai</strong>
+                </article>
+
+                <article class="payment-card" id="pay-qris" onclick="selectPayment('qris')">
+                    <span class="pay-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24"
+                            fill="none" stroke="#2456a4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="5" y="5" width="3" height="3" fill="#2456a4" stroke="none"/>
+                            <rect x="16" y="5" width="3" height="3" fill="#2456a4" stroke="none"/>
+                            <rect x="5" y="16" width="3" height="3" fill="#2456a4" stroke="none"/>
+                            <path d="M14 14h3v3h-3zM17 17h3v3h-3zM14 20h3"/>
+                        </svg>
+                    </span>
+                    <strong class="pay-label">QRIS</strong>
+                </article>
+
+                <article class="payment-card" id="pay-spaylater" onclick="selectPayment('spaylater')">
+                    <span class="pay-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24"
+                            fill="none" stroke="#2456a4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
+                            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
+                            <path d="M18 12a2 2 0 0 0 0 4h4v-4z"/>
+                        </svg>
+                    </span>
+                    <strong class="pay-label">SpayLater</strong>
+                </article>
+
+                <article class="payment-card" id="pay-kredit" onclick="selectPayment('kredit')">
+                    <span class="pay-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24"
+                            fill="none" stroke="#2456a4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                            <line x1="1" y1="10" x2="23" y2="10"/>
+                            <line x1="5" y1="15" x2="9" y2="15"/>
+                        </svg>
+                    </span>
+                    <strong class="pay-label">Kredit/Debit</strong>
+                </article>
+
+            </section>
+        </main>
+
+    </div>
+</div>
+
+    <script src="../shared/shared.js"></script>
+    <script src="pembayaran.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

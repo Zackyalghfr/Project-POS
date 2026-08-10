@@ -1,0 +1,155 @@
+:root {
+    --blue: #2456a4;
+    --blue-dark: #1a3f7a;
+    --blue-light: #3a6bc7;
+    --green: #2e9e4f;
+    --green-dark: #237a3d;
+    --gray-bg: #e8eaed;
+    --gray-sidebar: #d0d3d8;
+    --white: #ffffff;
+    --text-dark: #1a1a2e;
+    --text-muted: #888;
+    --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+    --radius: 14px;
+    --radius-sm: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gray-bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* — App Layout — */
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* — Topbar — */
+.topbar {
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    height: 72px;
+    color: #fff;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.topbar-user .user-avatar {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.22);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* — App Body — */
+.app-body {
+    display: flex;
+    flex: 1;
+}
+
+/* — Sidebar — */
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--gray-sidebar);
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.18s;
+}
+
+.nav-item:hover {
+    background: rgba(36, 86, 164, 0.10);
+    color: var(--blue);
+}
+
+.nav-item.active {
+    background: var(--blue);
+    color: #fff;
+}
+
+.nav-item .nav-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+    position: relative;
+}
+
+/* — Cart Badge — */
+.badge-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* — Main Content — */
+.main-content {
+    flex: 1;
+    padding: 32px 36px;
+    overflow-y: auto;
+    background: #f4f5f8;
+}
+
+/* — Responsive — */
+@media (max-width: 900px) {
+    .sidebar { width: 190px; min-width: 190px; }
+}
